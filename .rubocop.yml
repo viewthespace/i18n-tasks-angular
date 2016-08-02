@@ -1,0 +1,17 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - bin/**/*
+    - db/**/*
+    - .gemspec/**/*
+    - .bundle/**/*
+    - vendor/**/*
+    - script/**/*
+AlignParameters:
+  Enabled: false
+LineLength:
+  Enabled: false
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+Style/Documentation:
+  Enabled: false
