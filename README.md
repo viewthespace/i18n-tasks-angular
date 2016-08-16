@@ -8,6 +8,7 @@ This gem provides scanners for key usages, such as:
 - translate-once=, translate-once-\*=
 - | pluralize
 - %translate-plural=
+- translation-key=
 
 ## Installation
 
