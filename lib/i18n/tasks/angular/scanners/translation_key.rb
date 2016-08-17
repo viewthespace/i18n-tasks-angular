@@ -5,7 +5,11 @@ module I18n
       module Scanners
         class TranslationKey < TranslateAbstract
           def pattern
-            /translation-key(?:-[a-z]+)?=[\"\']([^\"\'\{\}]+)[\"\']/
+            [
+              /translation-key(?:-[a-z]+)?=[\"\']([^\"\'\{\}]+)[\"\']/,
+              # ternary operator
+              /translation-key=[\'\"][^?]*\?\s[\'\"]([^\"\'\{\}]+)[\'\"]\s:\s[\'\"]([^\"\'\{\}]+)[\'\"] \S*[\'\"]/
+            ]
           end
         end
       end
