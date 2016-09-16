@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 require 'spec_helper'
 
-RSpec.describe 'TranslationKey', type: :scanner do
-  subject { I18n::Tasks::Angular::Scanners::TranslationKey.new }
+RSpec.describe I18n::Tasks::Angular::Scanners::TranslationKey, type: :scanner do
+  subject { described_class.new }
 
   describe '#pattern' do
     context 'double quotes' do
