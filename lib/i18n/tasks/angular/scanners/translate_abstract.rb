@@ -9,6 +9,8 @@ module I18n
           include I18n::Tasks::Scanners::RelativeKeys
           include I18n::Tasks::Scanners::OccurrenceFromPosition
           include I18n::Tasks::Scanners::RubyKeyLiterals
+          DEFAULT_PATTERN = '(?:-[a-z]+)?=[\"\']([^\"\'\{\}]+)[\"\']'
+          TERNARY_PATTERN = '[\'\"][^?]*\?\s[\'\"]([^\"\'\{\}]+)[\'\"]\s:\s[\'\"]([^\"\'\{\}]+)[\'\"] \S*[\'\"]'
 
           def scan_file(path)
             text = read_file(path)
@@ -45,7 +47,14 @@ module I18n
           end
 
           def pattern
-            raise NotImplemented
+            [
+              /#{pattern_key}#{DEFAULT_PATTERN}/,
+              /#{pattern_key}=#{TERNARY_PATTERN}/
+            ]
+          end
+
+          def pattern_key
+            self.class.to_s.demodulize.underscore.dasherize
           end
         end
       end
