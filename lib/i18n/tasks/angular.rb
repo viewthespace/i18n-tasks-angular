@@ -21,3 +21,6 @@ I18n::Tasks.add_scanner 'I18n::Tasks::Angular::Scanners::TranslatePluralize', on
 
 require 'i18n/tasks/angular/scanners/translation_key'
 I18n::Tasks.add_scanner 'I18n::Tasks::Angular::Scanners::TranslationKey', only: %w(*.haml *.coffee *.js)
+
+require 'i18n/tasks/angular/scanners/translation_uib_tooltip'
+I18n::Tasks.add_scanner 'I18n::Tasks::Angular::Scanners::TranslationUibTooltip', only: %w(*.haml)
