@@ -1,3 +1,6 @@
+# Archived
+This repo is not actively used. It was a previous fork from Hightower.
+
 # i18n-tasks-angular
 i18n-tasks-angular extends i18n-tasks with scanners for angular-translate and angular-translate-once
 
